@@ -29,3 +29,13 @@ something.loadAttractions()
 
 
 console.log('hi!');
+
+//////////// Footer function /////////////
+something.loadParkInfo()
+.then((data) => {
+	console.log("park Data for madeline", data);
+	console.log();
+	$("#park-information-footer").append(`<p><strong>&copy Mustache Parks Inc.</strong></p>
+																				<p><strong>Park Location:</strong> <a href="https://goo.gl/maps/o9GWjwLygao">${data[0].location}</a></p>
+																				<p><strong>Park Hours:</strong> ${data[0].operating_hours[0].opening}am - ${data[0].operating_hours[0].closing}pm</p>`);
+});

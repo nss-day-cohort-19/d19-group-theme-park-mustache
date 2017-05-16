@@ -89,7 +89,6 @@ map.filterData = (data) => {
   return ourAttractions;
 };
 
-// map.filterData()
 // map.getAreaData = () => {
 //   console.log(areaData);
 // 	return areaData;
@@ -109,8 +108,3 @@ map.filterData = (data) => {
 
 
 module.exports = map;
-
-
-
-
-
