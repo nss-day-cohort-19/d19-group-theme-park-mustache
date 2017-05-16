@@ -1,3 +1,7 @@
-
+#park-information-footer {
+  text-align: center; }
+  #park-information-footer p {
+    display: inline-block;
+    margin: 0 2% 0 2%; }
 
 /*# sourceMappingURL=main.css.map */

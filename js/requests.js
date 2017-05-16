@@ -65,7 +65,7 @@ map.loadParkInfo = function() {
     });
   });
 };
-map.loadParkInfo();
+// map.loadParkInfo();
 // map.getAreaData = () => {
 //   console.log(areaData);
 // 	return areaData;
@@ -85,8 +85,3 @@ map.loadParkInfo();
 
 
 module.exports = map;
-
-
-
-
-
