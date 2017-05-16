@@ -3,6 +3,8 @@
 let something = require('../js/requests.js');
 let _ = require('lodash');
 
+
+
 // function popListOnLoad(){
 // 	//pull attraction types
 // 	var types = {};
@@ -19,14 +21,8 @@ function popMapOnLoad(){
 
 something.loadAttractions()
 .then( (data) => {
-	var filterAtrractions = _.filter(data, function(o){
-		let correct = [];
-		if (['area_id', 2] || ['area_id', 3] || ['area_id', 5] || ['area_id', 6] || ['area_id', 7]){
-			correct.push(o);
-		}
-		return correct;
-	});
-	console.log("filterAtrractions", filterAtrractions);
+// 	let divToDOM = `<div>
+
 }, (reject) => {
 	console.log("something is broken");
 });
