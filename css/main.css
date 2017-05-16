@@ -4,4 +4,10 @@
     display: inline-block;
     margin: 0 2% 0 2%; }
 
+body {
+  padding-top: 60px; }
+
+.container {
+  padding-top: 8px; }
+
 /*# sourceMappingURL=main.css.map */
