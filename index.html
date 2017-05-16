@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Mustache Theme Park Interactive Map</title>
-    <link rel="stylesheet" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -14,8 +14,98 @@
       </header>
 
       <div id="map">
-
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cinderella">Cinderella's Castle</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#frontier">Frontierland</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adventure">Adventureland</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fantasy">Fantasyland</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tomorrow">Tomorrowland</button>
       </div>
+
+    <!-- Cinderella Modal -->
+      <div class="modal fade" id="cinderella" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Cinderella's Castle</h4>
+            </div>
+            <div class="modal-body" id="cinderella-content">
+              <p>info</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-body -->
+        </div>
+      </div>
+    <!-- Frontierland Modal -->
+    <div class="modal fade" id="frontier" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Frontierland</h4>
+          </div>
+          <div class="modal-body" id="frontier-content">
+            <p>info</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-body -->
+      </div>
+    </div>
+    <!-- Adventureland Modal -->
+    <div class="modal fade" id="adventure" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Adventureland</h4>
+          </div>
+          <div class="modal-body" id="adventure-content">
+            <p>info</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-body -->
+      </div>
+    </div>
+    <!-- Fantasyland Modal -->
+    <div class="modal fade" id="fantasy" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Fantasyland</h4>
+          </div>
+          <div class="modal-body" id="fantasy-content">
+            <p>info</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-body -->
+      </div>
+    </div>
+    <!-- Tomorrowland Modal -->
+    <div class="modal fade" id="tomorrow" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Tomorrowland</h4>
+          </div>
+          <div class="modal-body" id="tomorrow-content">
+            <p>info</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-body -->
+      </div>
+    </div>
 
       <div id="all-attractions">
 
@@ -24,7 +114,7 @@
 
     </div>
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="dist/app.js"></script>
   </body>
 </html>
