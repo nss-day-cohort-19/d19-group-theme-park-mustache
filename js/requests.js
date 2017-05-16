@@ -1,6 +1,6 @@
 "use strict";
 
-
+let _ = require('lodash');
 let areaData = [];
 let attractionData = [];
 let typeData = [];
@@ -17,13 +17,14 @@ map.loadAreas = function() {
     }).done(function(data) {
     	areaData = data;
       resolve(data);
-      console.log(data);
+      // console.log(data);
     }).fail(function(error) {
       reject(error);
     });
   });
 };
-map.loadAreas();
+// map.loadAreas();
+
 map.loadTypes = function() {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -31,13 +32,14 @@ map.loadTypes = function() {
     }).done(function(data) {
     	typeData = data;
       resolve(data);
-       console.log(data);
+       // console.log(data);
     }).fail(function(xhr, status, error) {
       reject(error);
     });
   });
 };
-map.loadTypes();
+// map.loadTypes();
+
 map.loadAttractions = function() {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -45,13 +47,14 @@ map.loadAttractions = function() {
     }).done(function(data) {
     	attractionData = data;
       resolve(data);
-       console.log(data);
+       // console.log(data);
     }).fail(function(xhr, status, error) {
       reject(error);
     });
   });
 };
-map.loadAttractions();
+// map.loadAttractions();
+
 map.loadParkInfo = function() {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -59,13 +62,34 @@ map.loadParkInfo = function() {
     }).done(function(data) {
     	parkInfo = data;
       resolve(data);
-       console.log(data);
+       // console.log(data);
     }).fail(function(xhr, status, error) {
       reject(error);
     });
   });
 };
-map.loadParkInfo();
+// map.loadParkInfo();
+
+map.filterData = (data) => {
+  var filteredAttractions = _.filter(data, function(item){return item.area_id === 2 ||
+    item.area_id === 3 || item.area_id === 5 || item.area_id === 6 ||
+    item.area_id === 7;});
+  var groupedAttractions = _.groupBy(filteredAttractions, (obj) =>{
+    return obj.type_id;
+  });
+  // console.log("groupedAttractions", groupedAttractions);
+  var ourAttractions = _.filter(groupedAttractions, function(obj){
+    // console.log("obj", obj);
+    for (let item in obj){
+      return obj[item].type_id === 1 || obj[item].type_id === 2 ||
+      obj[item].type_id === 3 || obj[item].type_id === 4;
+    }
+  });
+  console.log("ourAttractions", ourAttractions);
+  return ourAttractions;
+};
+
+// map.filterData()
 // map.getAreaData = () => {
 //   console.log(areaData);
 // 	return areaData;
