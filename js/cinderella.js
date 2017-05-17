@@ -12,7 +12,7 @@ map.show = () => {
 
 requests.filterByArea(2)
 	.then( (data) =>{
-	console.log("data on cinderella", data[2]);
+	console.log("data on cinderella", data);
 	}, (reject) => {
 		console.log(reject);
 });
