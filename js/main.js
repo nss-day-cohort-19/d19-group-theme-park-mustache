@@ -18,15 +18,15 @@ Load attractions list to DOM
 requests.loadAttractions()
 .then( (data) => {
 	let array = requests.filterData(data);
-	let rides = `<div class="list"><h4>Rides</h4>`;
-	let restuarant = `<div class="list"><h4>Restaurants</h4>`;
-	let show = `<div class="list"><h4>Shows</h4>`;
-	let vendor = `<div class="list"><h4>Vendors</h4>`;
+	let rides = `<div id="rides" class="list"><h4>Rides</h4>`;
+	let restuarant = `<div id="restaurants" class="list"><h4>Restaurants</h4>`;
+	let show = `<div id="shows" class="list"><h4>Shows</h4>`;
+	let vendor = `<div id="vendors" class="list"><h4>Vendors</h4>`;
 	_.forEach(array, (value, index) =>{
 		_.forIn(value, (currItem, number) => {
 			if (currItem.type_id === 1){
 				rides += `<p>${currItem.name}</p>`;
-				console.log("name", currItem.name, "currItem", currItem);
+				// console.log("name", currItem.name, "currItem", currItem);
 			} else if (currItem.type_id === 2){
 				restuarant += `<p>${currItem.name}</p>`;
 			} else if (currItem.type_id === 3){
