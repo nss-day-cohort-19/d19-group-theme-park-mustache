@@ -122,6 +122,7 @@ map.getParkData = () => {
 	return parkInfo;
 };
 
+console.log(map.filterByArea(3));
 
 
 module.exports = map;
