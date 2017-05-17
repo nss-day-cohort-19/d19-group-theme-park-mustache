@@ -1,43 +1,60 @@
 "use strict";
 
-let something = require('../js/requests.js');
+let requests = require('../js/requests.js');
 let _ = require('lodash');
+let cinderella = require('../js/cinderella.js');
 
-// function popListOnLoad(){
-// 	//pull attraction types
-// 	var types = {};
-// 	something.loadAttractions().then
 
-// 	//find all attractions with area_ids 2, 3, 5, 6, 7
-// 	//group those attractions by type_id and push into a group div with type id name.
-// }
 
 function popMapOnLoad(){
 }
+// let nav = document.getElementById("nav");
+// nav.addEventListener("click", cinderella.show);
 
 
-
-something.loadAttractions()
+/************************
+Load attractions list to DOM
+************************/
+requests.loadAttractions()
 .then( (data) => {
-	var filterAtrractions = _.filter(data, function(o){
-		let correct = [];
-		if (['area_id', 2] || ['area_id', 3] || ['area_id', 5] || ['area_id', 6] || ['area_id', 7]){
-			correct.push(o);
-		}
-		return correct;
+	let array = requests.filterData(data);
+	let rides = `<div id="rides" class="list"><h4>Rides</h4>`;
+	let restuarant = `<div id="restaurants" class="list"><h4>Restaurants</h4>`;
+	let show = `<div id="shows" class="list"><h4>Shows</h4>`;
+	let vendor = `<div id="vendors" class="list"><h4>Vendors</h4>`;
+	_.forEach(array, (value, index) =>{
+		_.forIn(value, (currItem, number) => {
+			if (currItem.type_id === 1){
+				rides += `<p>${currItem.name}</p>`;
+				// console.log("name", currItem.name, "currItem", currItem);
+			} else if (currItem.type_id === 2){
+				restuarant += `<p>${currItem.name}</p>`;
+			} else if (currItem.type_id === 3){
+				show += `<p>${currItem.name}</p>`;
+			} else {
+				vendor += `<p>${currItem.name}</p>`;
+			}
+		});
+	// console.log("value", value, "index", index);
 	});
-	console.log("filterAtrractions", filterAtrractions);
+	rides += `<a href="#map">Return to Park Map</a><hr></div>`;
+	restuarant += `<a href="#map">Return to Park Map</a><hr></div>`;
+	show += `<a href="#map">Return to Park Map</a><hr></div>`;
+	vendor += `<a href="#map">Return to Park Map</a><hr></div>`;
+	$('#all-attractions').html(rides + restuarant + show + vendor);
+
+
 }, (reject) => {
 	console.log("something is broken");
 });
 
 
-console.log('hi!');
+
 
 //////////// Footer function /////////////
-something.loadParkInfo()
+requests.loadParkInfo()
 .then((data) => {
-	console.log("park Data for madeline", data);
+	// console.log("park Data for madeline", data);
 	console.log();
 	$("#park-information-footer").append(`<p><strong>&copy Mustache Parks Inc.</strong></p>
 																				<p><strong>Park Location:</strong> <a href="https://goo.gl/maps/o9GWjwLygao">${data[0].location}</a></p>
