@@ -3,8 +3,10 @@
 let requests = require('../js/requests.js');
 let _ = require('lodash');
 let cinderella = require('../js/cinderella.js');
-
-
+//Working on populating modals
+let fantasy = require('./fantasy.js'),
+	fantasyTemplate = require('../templates/fantasy-modal.hbs');
+// Working on populating modals
 
 function popMapOnLoad(){
 }
@@ -60,3 +62,12 @@ requests.loadParkInfo()
 																				<p><strong>Park Location:</strong> <a href="https://goo.gl/maps/o9GWjwLygao">${data[0].location}</a></p>
 																				<p><strong>Park Hours:</strong> ${data[0].operating_hours[0].opening}am - ${data[0].operating_hours[0].closing}pm</p>`);
 });
+
+// Working on populating modals
+let hobo = document.getElementsByTagName("body");
+hobo[0].addEventListener("click", function(){
+	console.log(event);
+});
+let fantasyBtn = document.getElementById("fantasyBtn");
+fantasyBtn.addEventListener("click", fantasy.popFantasy);
+// Working on populating modals

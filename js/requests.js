@@ -89,21 +89,21 @@ map.filterData = (data) => {
   return ourAttractions;
 };
 
-// map.getAreaData = () => {
-//   console.log(areaData);
-// 	return areaData;
-// };
+map.getAreaData = () => {
+  console.log(areaData);
+	return areaData;
+};
 
-// map.getAttractionData = () => {
-// 	return attractionData;
-// };
+map.getAttractionData = () => {
+	return attractionData;
+};
 
-// map.getTypeData = () => {
-// 	return typeData;
-// };
-// map.getParkData = () => {
-// 	return parkInfo;
-// };
+map.getTypeData = () => {
+	return typeData;
+};
+map.getParkData = () => {
+	return parkInfo;
+};
 
 
 
