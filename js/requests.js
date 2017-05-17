@@ -1,6 +1,7 @@
 "use strict";
 
 let _ = require('lodash');
+// let requests = require('./requests.js');
 let areaData = [];
 let attractionData = [];
 let typeData = [];
@@ -73,7 +74,7 @@ map.loadParkInfo = function() {
 map.filterData = (data) => {
   var filteredAttractions = _.filter(data, function(item){return item.area_id === 2 ||
     item.area_id === 3 || item.area_id === 5 || item.area_id === 6 ||
-    item.area_id === 7;});
+    item.area_id === 1;});
   var groupedAttractions = _.groupBy(filteredAttractions, (obj) =>{
     return obj.type_id;
   });
@@ -85,25 +86,41 @@ map.filterData = (data) => {
       obj[item].type_id === 3 || obj[item].type_id === 4;
     }
   });
-  console.log("ourAttractions", ourAttractions);
+  // console.log("ourAttractions", ourAttractions);
   return ourAttractions;
 };
 
-// map.getAreaData = () => {
-//   console.log(areaData);
-// 	return areaData;
-// };
 
-// map.getAttractionData = () => {
-// 	return attractionData;
-// };
+map.filterByArea = (areaNum) => {
+  let newArray = [];
+  map.loadAttractions()
+  .then( (data) =>{
+    let array = map.filterData(data);
+    _.forEach(array, (value, index) =>{
+      _.forIn(value, (currVal, num) =>{
+        if (currVal.area_id === areaNum){
+          newArray.push(currVal);
+        }
+      });
+    });
+    // console.log("filterByArea's array", newArray);
+  }, (reject) =>{
+    console.log("filterByArea is broken");
+  }
+  );
+  return newArray;
+};
 
-// map.getTypeData = () => {
-// 	return typeData;
-// };
-// map.getParkData = () => {
-// 	return parkInfo;
-// };
+map.getAttractionData = () => {
+	return attractionData;
+};
+
+map.getTypeData = () => {
+	return typeData;
+};
+map.getParkData = () => {
+	return parkInfo;
+};
 
 
 
