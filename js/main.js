@@ -1,12 +1,15 @@
 "use strict";
 
-let requests = require('../js/requests.js');
+let requests = require('./requests.js');
 let _ = require('lodash');
-let cinderella = require('../js/cinderella.js');
+
 //Working on populating modals
 let fantasy = require('./fantasy.js'),
 	fantasyTemplate = require('../templates/fantasy-modal.hbs');
 // Working on populating modals
+
+let cinderella = require('./cinderella.js');
+
 
 function popMapOnLoad(){
 }
