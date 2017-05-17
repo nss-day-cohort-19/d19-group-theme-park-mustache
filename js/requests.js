@@ -85,7 +85,7 @@ map.filterData = (data) => {
       obj[item].type_id === 3 || obj[item].type_id === 4;
     }
   });
-  console.log("ourAttractions", ourAttractions);
+  // console.log("ourAttractions", ourAttractions);
   return ourAttractions;
 };
 
