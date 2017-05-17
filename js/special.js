@@ -26,11 +26,22 @@ special.findTimedEvents = (data) => {
 	//attempt to pull one item with timed events
 	var firstItemWithTimes = timedEvents[0].times;
 	console.log("firstItemWithTimes", firstItemWithTimes);
-	//sort timed events by type
-	// var allTimes = _.sort(timedEvents)
 };
 
-//get "times" array out of each timedEvents
+
+// timeLoop(timedEvents);
+// function timeLoop(data){
+// 	for (var i = 0; i < data.length; i++) {
+// 	for (var j = 0; j < data[i].length; j++) {
+// 		console.log("data[i].times", data[i].times);
+// 	}
+// }
+// }
+// };
+
+//if greater than 12 --> "pm" array
+
+
 
 //parseFloat each time (change string to number value)
 
