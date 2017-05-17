@@ -10,7 +10,19 @@ map.show = () => {
 
 
 
-let hi = requests.filterByArea(2);
-console.log("hi", hi);
+requests.filterByArea(2)
+	.then( (data) =>{
+	console.log("data on cinderella", data);
+	}, (reject) => {
+		console.log(reject);
+});
+
+
+
+// _.forIn(hi, (currVal, index) =>{
+// 	console.log("currVal", currVal, "index", index);
+// });
+
+
 
 module.exports = map;
