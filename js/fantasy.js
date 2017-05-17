@@ -3,23 +3,19 @@
 let map = require('../js/requests.js');
 let fantasy = {};
 let areaData = [];
-let attractionData = [];
+// let attractionData;
 let typeData = [];
 
 let Fantasyland = document.getElementById("Fantasyland");
 
 fantasy.popFantasy = function(){
-	// Fantasyland.innerHTML = "wubalubdubdub";
-	// map.loadAreas();
-	// map.loadAttractions();
-	// map.loadTypes();
-	areaData = map.getAreaData();
-	attractionData = map.getAttractionData();
-	typeData = map.getTypeData();
-	// console.log("fantasy.js", map.getAttractionData());
-	console.log("fantasy.js", attractionData);
-	// console.log("fantasy.js", map.getTypeData());
-	fantasy.popFantasyModal(attractionData);
+	let attractionData = map.filterByArea(3);
+	console.log("Mario", attractionData[1]);
+	map.loadAttractions()
+.then((data)=>{
+	fantasy.popFantasyModal(data);
+});
+
 };
 
 fantasy.getFantasyAttractions = () => {
