@@ -1,8 +1,8 @@
 "use strict";
 
-let requests = require('../js/requests.js');
+let requests = require('./requests.js');
 let _ = require('lodash');
-let cinderella = require('../js/cinderella.js');
+let cinderella = require('./cinderella.js');
 
 
 
