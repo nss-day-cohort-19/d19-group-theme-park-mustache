@@ -91,25 +91,30 @@ map.filterData = (data) => {
 };
 
 
-map.filterByArea = (areaNum) => {
-  let newArray = [];
-  map.loadAttractions()
-  .then( (data) =>{
-    let array = map.filterData(data);
-    _.forEach(array, (value, index) =>{
-      _.forIn(value, (currVal, num) =>{
-        if (currVal.area_id === areaNum){
-          newArray.push(currVal);
-        }
-      });
-    });
-    // console.log("filterByArea's array", newArray);
-  }, (reject) =>{
-    console.log("filterByArea is broken");
-  }
-  );
-  return newArray;
+map.filterByArea = function(areaNum){
+  return new Promise( (resolve, reject) =>{
+    map.loadAttractions()
+      .then( (data) =>{
+        let funArray = map.filterData(data);
+        let newArray = [];
+          console.log("funArray", funArray);
+        _.forEach(funArray, (value, index) =>{
+          _.forIn(value, (currVal, num) =>{
+            if (currVal.area_id === areaNum){
+              newArray.push(currVal);
+            }
+          });
+        });
+        resolve(newArray);
+        console.log("filterByArea's array", newArray);
+      }, (error) =>{
+        console.log(error);
+      }
+    );
+    // reject("filter error");
+  });
 };
+
 
 map.getAttractionData = () => {
 	return attractionData;

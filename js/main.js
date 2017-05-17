@@ -48,7 +48,6 @@ requests.loadAttractions()
 	vendor += `<a href="#map">Return to Park Map</a><hr></div>`;
 	$('#all-attractions').html(rides + restuarant + show + vendor);
 
-
 }, (reject) => {
 	console.log("something is broken");
 });
