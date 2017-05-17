@@ -10,7 +10,7 @@ map.show = () => {
 
 
 
-let hi = requests.filterByArea(5);
+let hi = requests.filterByArea(2);
 console.log("hi", hi);
 
 module.exports = map;
