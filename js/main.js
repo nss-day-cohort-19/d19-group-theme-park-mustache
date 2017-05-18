@@ -2,6 +2,7 @@
 
 let requests = require('./requests.js');
 let _ = require('lodash');
+let special = require('./special');
 
 //Working on populating modals
 let fantasy = require('./fantasy.js'),
