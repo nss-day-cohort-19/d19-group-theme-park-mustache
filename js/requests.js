@@ -91,29 +91,29 @@ map.filterData = (data) => {
 };
 
 
-map.filterByArea = function(areaNum){
-  return new Promise( (resolve, reject) =>{
-    map.loadAttractions()
-      .then( (data) =>{
-        let funArray = map.filterData(data);
-        let newArray = [];
-          // console.log("funArray", funArray);
-        _.forEach(funArray, (value, index) =>{
-          _.forIn(value, (currVal, num) =>{
-            if (currVal.area_id === areaNum){
-              newArray.push(currVal);
-            }
-          });
-        });
-        resolve(newArray);
-        // console.log("filterByArea's array", newArray);
-      }, (error) =>{
-        console.log(error);
-      }
-    );
-    // reject("filter error");
-  });
-};
+// map.filterByArea = function(areaNum){
+//   return new Promise( (resolve, reject) =>{
+//     map.loadAttractions()
+//       .then( (data) =>{
+//         let funArray = map.filterData(data);
+//         let newArray = [];
+//           // console.log("funArray", funArray);
+//         _.forEach(funArray, (value, index) =>{
+//           _.forIn(value, (currVal, num) =>{
+//             if (currVal.area_id === areaNum){
+//               newArray.push(currVal);
+//             }
+//           });
+//         });
+//         resolve(newArray);
+//         // console.log("filterByArea's array", newArray);
+//       }, (error) =>{
+//         console.log(error);
+//       }
+//     );
+//     // reject("filter error");
+//   });
+// };
 
 
 map.getAttractionData = () => {
@@ -127,7 +127,7 @@ map.getParkData = () => {
 	return parkInfo;
 };
 
-console.log(map.filterByArea(3));
+// console.log(map.filterByArea(3));
 
 
 module.exports = map;
