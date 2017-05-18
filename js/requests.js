@@ -97,7 +97,7 @@ map.filterByArea = function(areaNum){
       .then( (data) =>{
         let funArray = map.filterData(data);
         let newArray = [];
-          console.log("funArray", funArray);
+          // console.log("funArray", funArray);
         _.forEach(funArray, (value, index) =>{
           _.forIn(value, (currVal, num) =>{
             if (currVal.area_id === areaNum){
@@ -106,7 +106,7 @@ map.filterByArea = function(areaNum){
           });
         });
         resolve(newArray);
-        console.log("filterByArea's array", newArray);
+        // console.log("filterByArea's array", newArray);
       }, (error) =>{
         console.log(error);
       }
