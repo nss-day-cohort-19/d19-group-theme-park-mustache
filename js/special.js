@@ -49,11 +49,27 @@ special.findTimedEvents = (data) => {
 };
 
 special.showEvents = (data) => {
-  console.log("these are the events", data);
 	for (var i = 0; i < data.length; i++) {
-	$("#happening-now").append(`<h5>${data[i].name}</h5>
+		var timeArrays = data[i].times;
+		var newTimes = [];
+		for (var j = 0; j < timeArrays.length; j++) {
+			var hours = timeArrays[j].substring(0,2);
+			var minutes = timeArrays[j].substring(2,4);
+			if (hours >= 13) {
+				var normalHour = hours - 12;
+				var pmTime = normalHour + ":" + minutes + "pm";
+				// console.log(pmTime);
+				newTimes.push(pmTime);
+			} if (hours < 13) {
+				var amTime = hours + ":" + minutes + "am";
+				newTimes.push(amTime);
+			}
+			console.log("The new Time Array", newTimes);
+		}
+	$("#happening-now").append(`<h4>${data[i].name}</h4>
 															<p>${data[i].description}</p>
-															<p><strong>Times: ${data[i].times}</strong></p>`);
+															<p><strong>Times:</strong> ${newTimes} </p>
+															<hr>`);
 }
 };
 
@@ -67,4 +83,3 @@ module.exports = special;
 //parseFloat each time (change string to number value)
 
 //convert military time to regular time to output to DOM
-
