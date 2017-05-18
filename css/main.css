@@ -5,6 +5,7 @@
     margin: 0 2% 0 2%; }
 
 body {
+  /*margin-top: 15rem;*/
   padding-top: 60px; }
 
 .container {
@@ -22,4 +23,27 @@ body {
   width: 90%;
   margin: 0 auto; }
 
+/********************
+Attractions List
+********************/
+#all-attractions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+
+.list {
+/*  display: flex;
+  flex-direction: column;*/
+  width: 35%;
+  margin: 0rem 5rem 0rem 10rem;
+  padding: 6rem 1rem 6rem 6rem;
+  border-bottom: solid lightgrey 1px;
+}
+
+#all-attractions div:nth-child(3), div:nth-child(4) {
+  border: none;
+}
 /*# sourceMappingURL=main.css.map */
+
+

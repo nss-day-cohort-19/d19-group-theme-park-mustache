@@ -42,10 +42,10 @@ requests.loadAttractions()
 		});
 	// console.log("value", value, "index", index);
 	});
-	rides += `<a href="#map">Return to Park Map</a><hr></div>`;
-	restuarant += `<a href="#map">Return to Park Map</a><hr></div>`;
-	show += `<a href="#map">Return to Park Map</a><hr></div>`;
-	vendor += `<a href="#map">Return to Park Map</a><hr></div>`;
+	rides += `<a href="#map">Return to Park Map</a></div>`;
+	restuarant += `<a href="#map">Return to Park Map</a></div>`;
+	show += `<a href="#map">Return to Park Map</a></div>`;
+	vendor += `<a href="#map">Return to Park Map</a></div>`;
 	$('#all-attractions').html(rides + restuarant + show + vendor);
 
 }, (reject) => {
