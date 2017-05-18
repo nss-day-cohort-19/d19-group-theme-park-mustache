@@ -27,6 +27,17 @@ body {
   margin: 0 auto; }
 
 
+.btn-info {
+  display: inline;
+  margin-left: 10px;
+  font-weight: 900; }
+
+li {
+  list-style-type: none; }
+
+.hide {
+  display: none; }
+
 #mainstreetModal {
   background: #730217; }
 
@@ -97,6 +108,7 @@ Attractions List
 
 #nav {
   text-align: right; }
+
 
 
 /*# sourceMappingURL=main.css.map */

@@ -12,64 +12,65 @@ let map = {};
 
 
 map.loadAreas = function() {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: "https://theme-park-268d3.firebaseio.com/areas/.json"
-    }).done(function(data) {
-    	areaData = data;
-      resolve(data);
-      // console.log(data);
-    }).fail(function(error) {
-      reject(error);
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: "https://theme-park-268d3.firebaseio.com/areas/.json"
+        }).done(function(data) {
+            areaData = data;
+            resolve(data);
+            // console.log(data);
+        }).fail(function(error) {
+            reject(error);
+        });
     });
-  });
 };
 // map.loadAreas();
 
 map.loadTypes = function() {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: "https://theme-park-268d3.firebaseio.com/attraction_types/.json"
-    }).done(function(data) {
-    	typeData = data;
-      resolve(data);
-       // console.log(data);
-    }).fail(function(xhr, status, error) {
-      reject(error);
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: "https://theme-park-268d3.firebaseio.com/attraction_types/.json"
+        }).done(function(data) {
+            typeData = data;
+            resolve(data);
+            // console.log(data);
+        }).fail(function(xhr, status, error) {
+            reject(error);
+        });
     });
-  });
 };
 // map.loadTypes();
 
 map.loadAttractions = function() {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: "https://theme-park-268d3.firebaseio.com/attractions/.json"
-    }).done(function(data) {
-    	attractionData = data;
-      resolve(data);
-       // console.log(data);
-    }).fail(function(xhr, status, error) {
-      reject(error);
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: "https://theme-park-268d3.firebaseio.com/attractions/.json"
+        }).done(function(data) {
+            attractionData = data;
+            resolve(data);
+            // console.log(data);
+        }).fail(function(xhr, status, error) {
+            reject(error);
+        });
     });
-  });
 };
 // map.loadAttractions();
 
 map.loadParkInfo = function() {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: "https://theme-park-268d3.firebaseio.com/park-info/.json"
-    }).done(function(data) {
-    	parkInfo = data;
-      resolve(data);
-       // console.log(data);
-    }).fail(function(xhr, status, error) {
-      reject(error);
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: "https://theme-park-268d3.firebaseio.com/park-info/.json"
+        }).done(function(data) {
+            parkInfo = data;
+            resolve(data);
+            // console.log(data);
+        }).fail(function(xhr, status, error) {
+            reject(error);
+        });
     });
-  });
 };
 // map.loadParkInfo();
+
 
 map.filterData = (data) => {
   var filteredAttractions = _.filter(data, function(item){return item.area_id === 2 ||
@@ -115,16 +116,15 @@ map.filterByArea = function(areaNum){
   });
 };
 
-
 map.getAttractionData = () => {
-	return attractionData;
+    return attractionData;
 };
 
 map.getTypeData = () => {
-	return typeData;
+    return typeData;
 };
 map.getParkData = () => {
-	return parkInfo;
+    return parkInfo;
 };
 
 console.log(map.filterByArea(3));

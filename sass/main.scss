@@ -42,6 +42,17 @@ body {
   margin: 0 auto;
 }
 
+.btn-info {
+  display: inline;
+  margin-left: 10px;
+  font-weight: 900;
+}
+li {
+  list-style-type: none;
+}
+.hide {
+  display: none;
+}
 
 
 @import 'modal';
@@ -76,4 +87,5 @@ Attractions List
 #nav {
   text-align: right;
 }
+
 
