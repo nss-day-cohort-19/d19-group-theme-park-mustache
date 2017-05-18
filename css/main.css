@@ -97,6 +97,17 @@ Attractions List
 #nav {
   text-align: right; }
 
+.btn-info {
+  display: inline;
+  margin-left: 10px;
+  font-weight: 900; }
+
+li {
+  list-style-type: none; }
+
+.hide {
+  display: none; }
+
 #happening-now h4 {
   color: #3558d4; }
 

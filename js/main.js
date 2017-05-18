@@ -4,16 +4,74 @@ let requests = require('./requests.js');
 let _ = require('lodash');
 let special = require('./special');
 
-//Working on populating modals
-let fantasy = require('./fantasy.js'),
-	fantasyTemplate = require('../templates/fantasy-modal.hbs');
-// Working on populating modals
-
-let cinderella = require('./cinderella.js');
-
-
-function popMapOnLoad(){
+/************************
+Azim's part
+************************/
+let Handlebars = require('hbsfy/runtime'),
+    adventure = require('./adventure.js'),
+    attractionsTemplate = require('../templates/attractions.hbs');
+function populateIt (rides, restaurants, shows, vendors, whichOne){
+	let div = document.createElement('div');
+    div.innerHTML += `<h1>Rides</h1>${attractionsTemplate(rides)}
+						<h1>Restaurants</h1>${attractionsTemplate(restaurants)}
+						<h1>Shows</h1>${attractionsTemplate(shows)}
+						<h1>Vendors</h1>${attractionsTemplate(vendors)}`;
+	if (whichOne === 1) {
+		$('#adventure-content').append(div);
+	} else if (whichOne === 2) {
+		$('#frontier-content').append(div);
+	} else if (whichOne === 3) {
+		$('#tomorrow-content').append(div);
+	} else if (whichOne === 4) {
+		$('#Fantasyland').append(div);
+	} else if (whichOne === 5) {
+		$('#cinderella-content').append(div);
+	}
 }
+
+var populateModal = function(rides, restaurants, shows, vendors) {
+    // console.log("main.js", rides, "restaurants:", restaurants, "shows:", shows, "vendors:", vendors);
+    populateIt(rides, restaurants, shows, vendors, 1);
+};
+
+var populateFrontier = function(rides, restaurants, shows, vendors) {
+ 	populateIt(rides, restaurants, shows, vendors, 2);
+};
+var populateTomorrow = function(rides, restaurants, shows, vendors) {
+    populateIt(rides, restaurants, shows, vendors, 3);
+};
+var populateFantasy = function(rides, restaurants, shows, vendors) {
+    populateIt(rides, restaurants, shows, vendors, 4);
+};
+var PopulateCin = function(rides, restaurants, shows, vendors) {
+    populateIt(rides, restaurants, shows, vendors, 5);
+};
+module.exports = { populateModal, populateFrontier, PopulateCin, populateTomorrow, populateFantasy };
+/************************
+Add and remove buttons
+************************/
+$('.modal-body').click((e) => {
+    // console.log(e);
+    if (e.target.innerHTML === 'add') {
+        var spanPar = e.target.parentElement.parentElement;
+        // console.log('add button', spanPar.firstChild);
+        $('#list-content').append(`<h4>${spanPar.firstChild.textContent}<span><button type="button" class="btn btn-info">delete</button></span></h4>`);
+        spanPar.parentElement.parentElement.remove();
+        $('.badge').text(parseInt($('.badge').text()) + 1);
+    } else if (e.target.innerHTML === 'delete') {
+        // console.log('delete');
+        var spanbtn = e.target.parentElement.parentElement;
+        e.target.parentElement.parentElement.remove();
+        console.log('delete', $('#list-content')[0]);
+    }
+});
+$('.modal-footer').click((e) => {
+    if (e.target.innerHTML === 'Clear') {
+        console.log('Clear');
+        $('#list-content')[0].innerHTML = '';
+        $('.badge').text(parseInt($('.badge').innerHTML = 0));
+    }
+});
 
 
 /************************
@@ -94,12 +152,3 @@ requests.loadParkInfo()
 																				<p><strong>Park Location:</strong> <a href="https://goo.gl/maps/o9GWjwLygao">${data[0].location}</a></p>
 																				<p><strong>Park Hours:</strong> ${data[0].operating_hours[0].opening}am - ${data[0].operating_hours[0].closing}pm</p>`);
 });
-
-// Working on populating modals
-let hobo = document.getElementsByTagName("body");
-hobo[0].addEventListener("click", function(){
-	console.log(event);
-});
-let fantasyBtn = document.getElementById("fantasyBtn");
-fantasyBtn.addEventListener("click", fantasy.popFantasy);
-// Working on populating modals
