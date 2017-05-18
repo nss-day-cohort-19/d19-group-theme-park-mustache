@@ -6,6 +6,7 @@ let special = {};
 
 document.getElementById('clock-input').addEventListener("change", function(){
 	$('#happening-now').empty();
+
 requests.loadAttractions()
 .then( (data) => {
 	let correctAreas = special.filterData(data);
@@ -57,3 +58,13 @@ special.showEvents = (data) => {
 };
 
 module.exports = special;
+
+
+//if greater than 12 --> "pm" array
+
+
+
+//parseFloat each time (change string to number value)
+
+//convert military time to regular time to output to DOM
+
