@@ -1,28 +1,36 @@
 "use strict";
-
-let requests = require('./requests.js');
+let requests = require('../js/requests.js');
+let main = require('./main.js');
 let _ = require('lodash');
-let map = {};
-
-map.show = () => {
-	console.log("yummy!");
-};
 
 
+var rides = [];
+var restaurants = [];
+var shows = [];
+var vendors = [];
 
-requests.filterByArea(2)
-	.then( (data) =>{
-	console.log("data on cinderella", data);
-	}, (reject) => {
-		console.log(reject);
+
+requests.loadAttractions().then((data) => {
+    var adventure = requests.filterData(data);
+    var advRides = _.filter(adventure[0], function(item) {
+        return item.area_id === 1;
+    });
+    var advRidesObj = {Rides : advRides};
+    var advRestaurants = _.filter(adventure[1], function(item) {
+        return item.area_id === 1;
+
+    });
+    var advRestaurantsObj = {Restaurants : advRestaurants};
+    var advShows = _.filter(adventure[2], function(item) {
+        return item.area_id === 1;
+    });
+    var advShowsObj = {Shows : advShows};
+    var advVendors = _.filter(adventure[3], function(item) {
+        return item.area_id === 1;
+    });
+    var advVendorsObj = {Vendors : advVendors};
+    main.PopulateCin(advRidesObj, advRestaurantsObj, advShowsObj, advVendorsObj);
 });
 
 
 
-// _.forIn(hi, (currVal, index) =>{
-// 	console.log("currVal", currVal, "index", index);
-// });
-
-
-
-module.exports = map;
