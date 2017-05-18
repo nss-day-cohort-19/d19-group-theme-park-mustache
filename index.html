@@ -22,7 +22,8 @@
                 <li><a href="#vendors">Vendors</a></li>
               </ul>
           </div>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#find-events">Find Events</button>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#find-events">Happening Now
+            <span class="caret"></span></button>
         </nav>
       </div>
       <div id="log">
@@ -40,17 +41,54 @@
       </div>
       <!-- Find Events Modal -->
       <div class="modal fade" id="find-events" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
+        <div id="modal-box" class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Find Events</h4>
+              <h4 class="modal-title">Happening Now</h4>
             </div>
-            <div class="modal-body" id="cinderella-content">
-              <p>info</p>
+            <div class="modal-body" id="clock-dropdown">
+              <form>
+                 <div class="form-group">
+                  <select class="form-control" id="clock-input">
+                    <option value="0">Set the clock</option>
+                    <option value="900"/>9:00am</option>
+                    <option value="930"/>9:30am</option>
+                    <option value="1000"/>10:00am</option>
+                    <option value="1030"/>10:30am</option>
+                    <option value="1100"/>11:00am</option>
+                    <option value="1130"/>11:30am</option>
+                    <option value="1200"/>12:00pm</option>
+                    <option value="1230"/>12:30pm</option>
+                    <option value="1300"/>1:00pm</option>
+                    <option value="1330"/>1:30pm</option>
+                    <option value="1400"/>2:00pm</option>
+                    <option value="1430"/>2:30pm</option>
+                    <option value="1500"/>3:00pm</option>
+                    <option value="1530"/>3:30pm</option>
+                    <option value="1600"/>4:00pm</option>
+                    <option value="1630"/>4:30pm</option>
+                    <option value="1700"/>5:00pm</option>
+                    <option value="1730"/>5:30pm</option>
+                    <option value="1800"/>6:00pm</option>
+                    <option value="1830"/>6:30pm</option>
+                    <option value="1900"/>7:00pm</option>
+                    <option value="1930"/>7:30pm</option>
+                    <option value="2000"/>8:00pm</option>
+                    <option value="2030"/>8:30pm</option>
+                    <option value="2100"/>9:00pm</option>
+                    <option value="2130"/>9:30pm</option>
+                    <option value="2200"/>10:00pm</option>
+                  </select>
+                </div>
+              </form>
+
+              <div id="happening-now">
+
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
             </div>
           </div><!-- /.modal-body -->
         </div>
