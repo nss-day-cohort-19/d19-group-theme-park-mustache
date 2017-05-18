@@ -14,8 +14,6 @@ let cinderella = require('./cinderella.js');
 
 function popMapOnLoad(){
 }
-// let nav = document.getElementById("nav");
-// nav.addEventListener("click", cinderella.show);
 
 
 /************************
@@ -43,18 +41,49 @@ requests.loadAttractions()
 		});
 	// console.log("value", value, "index", index);
 	});
-	rides += `<a href="#map">Return to Park Map</a><hr></div>`;
-	restuarant += `<a href="#map">Return to Park Map</a><hr></div>`;
-	show += `<a href="#map">Return to Park Map</a><hr></div>`;
-	vendor += `<a href="#map">Return to Park Map</a><hr></div>`;
+	rides += `<a href="#map">Return to Park Map</a></div>`;
+	restuarant += `<a href="#map">Return to Park Map</a></div>`;
+	show += `<a href="#map">Return to Park Map</a></div>`;
+	vendor += `<a href="#map">Return to Park Map</a></div>`;
 	$('#all-attractions').html(rides + restuarant + show + vendor);
 
 }, (reject) => {
 	console.log("something is broken");
 });
 
+/******************
+Event Listeners for Map
+******************/
+// $( "#map" ).on( "mousemove", function( event ) {
+// 	var parentOffset = $(this).offset();
+// 	var relX = event.pageX - parentOffset.left;
+// 	var relY = event.pageY - parentOffset.top;
+//   $( "#log" ).text( "relX: " + relX + ", relY: " + relY );
+// });
 
-
+$("#map").click(function(event) {
+	var parentOffset = $(this).offset();
+	var relX = event.pageX - parentOffset.left;
+	var relY = event.pageY - parentOffset.top;
+	if (relX >= 473 && relX <= 801 && relY >= 60 && relY <= 306){
+		//fire fantasy modal
+		$('#fantasy').modal('show');
+	} else if (relX >= 261 && relX <= 462 && relY >= 158 && relY <= 290){
+		//fire Adventure modal
+		$('#adventure').modal('show');
+	} else if (relX >= 541 && relX <= 725 && relY >= 373 && relY <= 695){
+		//fire MainStreet modal
+		$('#mainStreet').modal('show');
+	} else if (relX >= 139 && relX <= 519 && relY >= 331 && relY <= 607){
+		//fire Frontier Modal
+		$('#frontier').modal('show');
+	} else if (relX >= 746 && relX <= 1045 && relY >= 249 && relY <= 559){
+		//fire Discovery modal
+		$('#discovery').modal('show');
+	}
+});
+/******************
+******************/
 
 //////////// Footer function /////////////
 requests.loadParkInfo()
