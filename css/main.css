@@ -27,6 +27,52 @@ body {
   margin: 0 auto; }
 
 
+#mainstreetModal {
+  background: #730217; }
+
+#adventurelandModal {
+  background: #D15530; }
+
+#frontierlandModal {
+  background: #A37849; }
+
+#libertysquareModal {
+  background: #2594D9; }
+
+#fantasylandModal {
+  background: #E73C81; }
+
+#tomorrowlandModal {
+  background: #3E4D8C; }
+
+#cinderellaModal {
+  background: #F2CF53; }
+
+#all-attractions > div > h4 {
+  color: #f7dd18; }
+
+#all-attractions > div > a {
+  color: white; }
+
+#all-attractions > div > p {
+  color: #38d843; }
+
+#rides {
+  border-radius: 3px;
+  background: #2594D9; }
+
+#restaurants {
+  border-radius: 3px;
+  background: #730217; }
+
+#shows {
+  border-radius: 3px;
+  background: #E73C81; }
+
+#vendors {
+  border-radius: 3px;
+  background: #3E4D8C; }
+
 /********************
 Attractions List
 ********************/
