@@ -16,11 +16,16 @@ body {
 
 #map {
   width: 90%;
+  height: 700px;
+  background-image: url(../images/DLP93map.png);
+  background-size: 1100px 820px;
+  background-repeat: no-repeat;
   margin: 0 auto; }
 
 #all-attractions {
   width: 90%;
   margin: 0 auto; }
+
 
 .btn-info {
   display: inline;
@@ -32,5 +37,78 @@ li {
 
 .hide {
   display: none; }
+
+#mainstreetModal {
+  background: #730217; }
+
+#adventurelandModal {
+  background: #D15530; }
+
+#frontierlandModal {
+  background: #A37849; }
+
+#libertysquareModal {
+  background: #2594D9; }
+
+#fantasylandModal {
+  background: #E73C81; }
+
+#tomorrowlandModal {
+  background: #3E4D8C; }
+
+#cinderellaModal {
+  background: #F2CF53; }
+
+#all-attractions > div > h4 {
+  color: #f7dd18; }
+
+#all-attractions > div > a {
+  color: white; }
+
+#all-attractions > div > p {
+  color: #38d843; }
+
+#rides {
+  border-radius: 3px;
+  background: #2594D9; }
+
+#restaurants {
+  border-radius: 3px;
+  background: #730217; }
+
+#shows {
+  border-radius: 3px;
+  background: #E73C81; }
+
+#vendors {
+  border-radius: 3px;
+  background: #3E4D8C; }
+
+/********************
+Attractions List
+********************/
+#all-attractions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5rem; }
+
+.list {
+  /*  display: flex;
+    flex-direction: column;*/
+  width: 35%;
+  margin: 0rem 5rem 0rem 10rem;
+  padding: 6rem 1rem 6rem 6rem;
+  border-bottom: solid lightgrey 1px; }
+
+#all-attractions div:nth-child(3), div:nth-child(4) {
+  border: none; }
+
+#log {
+  position: fixed; }
+
+#nav {
+  text-align: right; }
+
+
 
 /*# sourceMappingURL=main.css.map */

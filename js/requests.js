@@ -86,33 +86,35 @@ map.filterData = (data) => {
       return obj[item].type_id === 1 || obj[item].type_id === 2 ||
       obj[item].type_id === 3 || obj[item].type_id === 4;
     }
-    });
-    // console.log("ourAttractions", ourAttractions);
-    return ourAttractions;
+  });
+  // console.log("ourAttractions", ourAttractions);
+  return ourAttractions;
 };
 
-// map.filterByArea = function(areaNum) {
-//     return new Promise((resolve, reject) => {
-//         map.loadAttractions()
-//             .then((data) => {
-//                 let funArray = map.filterData(data);
-//                 let newArray = [];
-//                 console.log("funArray", funArray);
-//                 _.forEach(funArray, (value, index) => {
-//                     _.forIn(value, (currVal, num) => {
-//                         if (currVal.area_id === areaNum) {
-//                             newArray.push(currVal);
-//                         }
-//                     });
-//                 });
-//                 resolve(newArray);
-//                 console.log("filterByArea's array", newArray);
-//             }, (error) => {
-//                 console.log(error);
-//             });
-//         // reject("filter error");
-//     });
-// };
+
+map.filterByArea = function(areaNum){
+  return new Promise( (resolve, reject) =>{
+    map.loadAttractions()
+      .then( (data) =>{
+        let funArray = map.filterData(data);
+        let newArray = [];
+          // console.log("funArray", funArray);
+        _.forEach(funArray, (value, index) =>{
+          _.forIn(value, (currVal, num) =>{
+            if (currVal.area_id === areaNum){
+              newArray.push(currVal);
+            }
+          });
+        });
+        resolve(newArray);
+        // console.log("filterByArea's array", newArray);
+      }, (error) =>{
+        console.log(error);
+      }
+    );
+    // reject("filter error");
+  });
+};
 
 map.getAttractionData = () => {
     return attractionData;
@@ -125,6 +127,7 @@ map.getParkData = () => {
     return parkInfo;
 };
 
+console.log(map.filterByArea(3));
 
 
 module.exports = map;

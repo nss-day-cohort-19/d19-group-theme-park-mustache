@@ -4,6 +4,7 @@ let main = require('./main.js');
 let _ = require('lodash');
 
 
+
 var rides = [];
 var restaurants = [];
 var shows = [];
@@ -30,6 +31,7 @@ requests.loadAttractions().then((data) => {
     });
     var advVendorsObj = {Vendors : advVendors};
     main.PopulateCin(advRidesObj, advRestaurantsObj, advShowsObj, advVendorsObj);
+
 });
 
 
