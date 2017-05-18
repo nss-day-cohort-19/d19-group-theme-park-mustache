@@ -1,4 +1,13 @@
+$mainstreet: #730217;
+$adventureland: #D15530;
+$frontierland: #A37849;
+$libertysquare: #2594D9;
+$fantasyland: #E73C81;
+$tomorrowland: #3E4D8C;
+$cinderella: #F2CF53;
+
 #park-information-footer {
+
   text-align: center;
   p {
     display: inline-block;
@@ -28,3 +37,6 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+
+@import 'modal';
+@import 'colLists';
