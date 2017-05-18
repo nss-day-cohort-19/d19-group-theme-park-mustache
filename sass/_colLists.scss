@@ -1,0 +1,29 @@
+
+#all-attractions > div > h4 {
+	color: #f7dd18;
+}
+#all-attractions > div > a {
+	color: white;
+}
+#all-attractions > div > p {
+	color: #38d843;
+}
+#rides{
+	border-radius: 3px;
+	background: $libertysquare;
+}
+
+#restaurants{
+	border-radius: 3px;
+	background: $mainstreet
+}
+
+#shows{
+	border-radius: 3px;
+	background: $fantasyland
+}
+
+#vendors{
+	border-radius: 3px;
+	background: $tomorrowland
+}
