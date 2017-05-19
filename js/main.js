@@ -12,10 +12,10 @@ let Handlebars = require('hbsfy/runtime'),
     attractionsTemplate = require('../templates/attractions.hbs');
 function populateIt (rides, restaurants, shows, vendors, whichOne){
 	let div = document.createElement('div');
-    div.innerHTML += `<h1>Rides</h1>${attractionsTemplate(rides)}
-						<h1>Restaurants</h1>${attractionsTemplate(restaurants)}
-						<h1>Shows</h1>${attractionsTemplate(shows)}
-						<h1>Vendors</h1>${attractionsTemplate(vendors)}`;
+    div.innerHTML += `<h4>Rides</h4>${attractionsTemplate(rides)}
+						<h4>Restaurants</h4>${attractionsTemplate(restaurants)}
+						<h4>Shows</h4>${attractionsTemplate(shows)}
+						<h4>Vendors</h4>${attractionsTemplate(vendors)}`;
 	if (whichOne === 1) {
 		$('#adventure-content').append(div);
 	} else if (whichOne === 2) {
