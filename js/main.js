@@ -16,35 +16,50 @@ function populateIt (rides, restaurants, shows, vendors, whichOne){
 						<h1>Restaurants</h1>${attractionsTemplate(restaurants)}
 						<h1>Shows</h1>${attractionsTemplate(shows)}
 						<h1>Vendors</h1>${attractionsTemplate(vendors)}`;
-	if (whichOne === 1) {
-		$('#adventure-content').append(div);
-	} else if (whichOne === 2) {
-		$('#frontier-content').append(div);
-	} else if (whichOne === 3) {
-		$('#tomorrow-content').append(div);
-	} else if (whichOne === 4) {
-		$('#Fantasyland').append(div);
-	} else if (whichOne === 5) {
-		$('#cinderella-content').append(div);
-	}
+	let descript = "";
+	requests.loadAreas()
+	.then( (data) => {
+	    _.forEach(data, (currVal, index) =>{
+	        // console.log("currVal.id", currVal.id);
+	        descript = `<p>${currVal.description}</p>`;
+			if (whichOne === 2 && currVal.id === 2) {
+				$('#adventure-content').append(div);
+				$('#adventure-header').append(descript);
+			} else if (whichOne === 3 && currVal.id === 3) {
+				$('#frontier-content').append(div);
+				$('#frontier-header').append(descript);
+			} else if (whichOne === 6 && currVal.id === 6) {
+				$('#tomorrow-content').append(div);
+				$('#discovery-header').append(descript);
+			} else if (whichOne === 5 && currVal.id === 5) {
+				$('#Fantasyland').append(div);
+				$('#fantasy-header').append(descript);
+			} else if (whichOne === 1 && currVal.id === 1) {
+				$('#cinderella-content').append(div);
+				$('#mainStreet-header').append(descript);
+			}
+	    });
+	}, (reject) => {
+	    console.log("loadAreas isn't working");
+	});
 }
 
 var populateModal = function(rides, restaurants, shows, vendors) {
     // console.log("main.js", rides, "restaurants:", restaurants, "shows:", shows, "vendors:", vendors);
-    populateIt(rides, restaurants, shows, vendors, 1);
+    populateIt(rides, restaurants, shows, vendors, 2);
 };
 
 var populateFrontier = function(rides, restaurants, shows, vendors) {
- 	populateIt(rides, restaurants, shows, vendors, 2);
+ 	populateIt(rides, restaurants, shows, vendors, 3);
 };
 var populateTomorrow = function(rides, restaurants, shows, vendors) {
-    populateIt(rides, restaurants, shows, vendors, 3);
+    populateIt(rides, restaurants, shows, vendors, 6);
 };
 var populateFantasy = function(rides, restaurants, shows, vendors) {
-    populateIt(rides, restaurants, shows, vendors, 4);
+    populateIt(rides, restaurants, shows, vendors, 5);
 };
 var PopulateCin = function(rides, restaurants, shows, vendors) {
-    populateIt(rides, restaurants, shows, vendors, 5);
+    populateIt(rides, restaurants, shows, vendors, 1);
 };
 module.exports = { populateModal, populateFrontier, PopulateCin, populateTomorrow, populateFantasy };
 /************************

@@ -32,3 +32,16 @@ requests.loadAttractions().then((data) => {
     main.populateModal(advRidesObj, advRestaurantsObj, advShowsObj, advVendorsObj);
 });
 
+
+// requests.loadAreas()
+// .then( (data) => {
+//     _.forEach(data, (currVal, index) =>{
+//         // console.log("currVal.name", currVal.name);
+//     });
+// }, (reject) => {
+//     console.log("loadAreas isn't working");
+// });
+
+
+
+
