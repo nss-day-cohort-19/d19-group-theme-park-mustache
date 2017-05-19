@@ -35,6 +35,7 @@ body {
   background-size: 1100px 820px;
   background-repeat: no-repeat;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 #all-attractions {
@@ -92,5 +93,9 @@ li {
 #happening-now {
   h4 {
     color: rgb(53, 88, 212);
-  } 
+  }
+}
+
+.modal {
+  color: white;
 }
