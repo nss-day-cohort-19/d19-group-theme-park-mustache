@@ -47,6 +47,9 @@ body {
 #cinderellaModal {
   background: #F2CF53; }
 
+.des {
+  display: none; }
+
 #all-attractions > div > h4 {
   color: #f7dd18; }
 
