@@ -19,7 +19,15 @@
 #cinderellaModal {
 	background: $cinderella
 }
-
+#eventsModal {
+	background: orange;
+}
+#itenModal {
+	background-color: red;
+}
+.show:hover{
+	font-size: 175%;
+}
 .des {
 	display: none;
 }

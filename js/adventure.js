@@ -32,3 +32,7 @@ requests.loadAttractions().then((data) => {
     main.populateModal(advRidesObj, advRestaurantsObj, advShowsObj, advVendorsObj);
 });
 
+
+
+
+

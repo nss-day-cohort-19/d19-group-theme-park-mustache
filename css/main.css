@@ -48,6 +48,15 @@ body {
 #cinderellaModal {
   background: #F2CF53; }
 
+#eventsModal {
+  background: orange; }
+
+#itenModal {
+  background-color: red; }
+
+.show:hover {
+  font-size: 175%; }
+
 .des {
   display: none; }
 
@@ -58,7 +67,7 @@ body {
   color: white; }
 
 #all-attractions > div > p {
-  color: #38d843; }
+  color: #38D843; }
 
 #rides {
   border-radius: 3px;
@@ -66,7 +75,7 @@ body {
 
 #restaurants {
   border-radius: 3px;
-  background: #730217; }
+  background: #A37849; }
 
 #shows {
   border-radius: 3px;
