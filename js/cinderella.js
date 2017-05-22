@@ -31,6 +31,3 @@ requests.loadAttractions().then((data) => {
     var advVendorsObj = {Vendors : advVendors};
     main.PopulateCin(advRidesObj, advRestaurantsObj, advShowsObj, advVendorsObj);
 });
-
-
-

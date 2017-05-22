@@ -24,6 +24,7 @@
     "materialize-css": "^0.98.2"
   },
   "dependencies": {
+    "firebase": "^4.0.0",
     "handlebars": "^4.0.8"
   }
 }
