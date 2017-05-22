@@ -63,32 +63,8 @@ var PopulateCin = function(rides, restaurants, shows, vendors) {
 };
 module.exports = { populateModal, populateFrontier, PopulateCin, populateTomorrow, populateFantasy };
 /************************
-Add and remove buttons
+make sure to delete this
 ************************/
-$('.modal-body').click((e) => {
-    // console.log(e);
-    if (e.target.innerHTML === 'add') {
-        var spanPar = e.target.parentElement.parentElement;
-        // console.log('add button', spanPar.firstChild);
-        $('#list-content').append(`<h4>${spanPar.firstChild.textContent}<span><button type="button" class="btn btn-info">delete</button></span></h4>`);
-        spanPar.parentElement.parentElement.remove();
-        $('.badge').text(parseInt($('.badge').text()) + 1);
-    } else if (e.target.innerHTML === 'delete') {
-        // console.log('delete');
-        var spanbtn = e.target.parentElement.parentElement;
-        e.target.parentElement.parentElement.remove();
-        console.log('delete', $('#list-content')[0]);
-    }
-});
-$('.modal-footer').click((e) => {
-    if (e.target.innerHTML === 'Clear') {
-        console.log('Clear');
-        $('#list-content')[0].innerHTML = '';
-        $('.badge').text(parseInt($('.badge').innerHTML = 0));
-    }
-});
-
-
 /************************
 Load attractions list to DOM
 ************************/
