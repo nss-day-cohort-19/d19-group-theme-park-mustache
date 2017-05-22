@@ -19,8 +19,8 @@ $('.modal-body').click((e) => {
   if (e.target.innerHTML === 'add') {
     $('.badge').text(parseInt($('.badge').text()) + 1);
     var spanPar = e.target.parentElement.parentElement;
-    spanPar.parentElement.parentElement.remove();
-    // console.log(spanPar.firstChild.textContent);
+    $(e.target).prop("disabled",true);
+    $(spanPar).append("<span>Added!</span>");
     dtobject.child('list').push(spanPar.firstChild.textContent);
     $('#list-content').append(`<h4>${spanPar.firstChild.textContent}</h4>`);
   }
